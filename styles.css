@@ -1,0 +1,247 @@
+/* Define CSS variables for both modes */
+:root {
+    --background-color: #1e1e2a;
+    --text-color: #ffffff;
+    --link-color: #00f0ff;
+    --button-bg-color: #00f0ff;
+    --button-text-color: #1e1e2a;
+    --background-image: url('assets/light.png');
+    --box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+    --text-shadow: 0 0 20px rgba(152, 41, 255, 0.5);
+
+
+}
+
+.light-mode {
+    --background-color: #ffffff;
+    --text-color: #1e1e2a;
+    --link-color: #007acc;
+    --button-bg-color: #007acc;
+    --button-text-color: #ffffff;
+    --background-image: url('assets/dark.png');
+    --box-shadow: 0 0 48px rgba(0, 0, 9, 0.5);
+    --text-shadow: 0 0 48px rgba(0, 0, 3, 0.5)
+
+}
+
+/* Reset some default styles */
+body, h1, h2, h3, p, a, ul, li, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    text-shadow: var(--text-shadow);
+    border-style: 2px #007acc;
+}
+
+/* Use CSS variables for body and other elements */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.logo, .nav-link, .social-icon, .download-cv {
+    color: var(--text-color);
+}
+
+.nav-link:hover, .social-icon:hover {
+    color: var(--link-color);
+}
+
+.download-cv {
+    background-color: var(--button-bg-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--button-text-color);
+}
+
+.download-cv:hover {
+    background-color: var(--link-color);
+}
+
+/* Header styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 15px 5%; /* Adjust padding to provide more space */
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure items wrap if necessary */
+}
+
+.nav-link {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Toggle button styling */
+.toggle-container {
+    position: relative;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    width: 70px;
+    height: 30px;
+    background-image: var(--background-image);
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toggle-switch {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: var(--button-text-color);
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: var(--link-color);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-switch {
+    transform: translateX(40px);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-inner .light-icon {
+    display: none;
+}
+
+.toggle-checkbox + .toggle-label .toggle-inner .dark-icon {
+    display: none;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-inner .dark-icon {
+    display: block;
+}
+
+/* Light/Dark mode icons */
+.light-icon,
+.dark-icon {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.light-icon {
+     /* Replace with the path to your light mode icon */
+}
+
+.dark-icon {
+         /* Replace with the path to your dark mode icon */
+}
+
+/* Main content styling */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    min-height: 100vh;
+}
+
+.intro {
+    max-width: 50%;
+}
+
+.intro h1 {
+    font-size: 36px;
+}
+
+.intro h2 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.intro h3 {
+    font-size: 24px;
+}
+
+.intro p {
+    margin: 20px 0;
+    color: #cccccc;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.social-icon {
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.profile-pic img {
+    max-width: 100%;
+    max-height: 500px; /* Adjust the maximum height to fit the layout */
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        padding: 100px 5%; /* Adjust padding for smaller screens */
+    }
+
+    .intro {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin-top: 20px;
+    }
+
+    .navbar {
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .nav-link {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+}
