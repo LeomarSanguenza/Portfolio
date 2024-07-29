@@ -202,18 +202,6 @@ body {
     color: #cccccc;
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.social-icon {
-    text-decoration: none;
-    font-size: 24px;
-    transition: color 0.3s;
-}
-
 .profile-pic img {
     max-width: 100%;
     max-height: 500px; /* Adjust the maximum height to fit the layout */
@@ -245,3 +233,51 @@ body {
         font-size: 14px; /* Reduce font size for smaller screens */
     }
 }
+
+/* ABOUT */
+/* About Section Styling */
+.about-section {
+    text-align: center;
+    padding: 50px 10%; /* Adjust padding as needed */
+}
+
+.about-section h2 {
+    font-size: 36px;
+    color: var(--text-color);
+    text-shadow: 0 0 10px var(--neon-border-color);
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 0 10px var(--neon-border-color);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.social-icon {
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+    color: var(--text-color);
+}
+
+.social-icon:hover {
+    color: var(--link-color);
+}
+
+/* Neon Border Styling for Text */
+.neon-text {
+    color: var(--text-color);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--neon-border-color), 0 0 40px var(--neon-border-color), 0 0 80px var(--neon-border-color), 0 0 90px var(--neon-border-color), 0 0 100px var(--neon-border-color), 0 0 150px var(--neon-border-color);
+}
+
+
